@@ -35,6 +35,7 @@ namespace ContosoUniversity.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
+
             var students = from s in db.Students
                            select s;
             if (!String.IsNullOrEmpty(searchString))
@@ -58,6 +59,7 @@ namespace ContosoUniversity.Controllers
                     break;
             }
 
+            int a_new_variable = 1;
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             return View(students.ToPagedList(pageNumber, pageSize));
